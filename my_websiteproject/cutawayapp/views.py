@@ -10,5 +10,6 @@ def home(request):
 def algorithms(request):
     return render(request, 'cutaway/algorithms.html', {})
 
+
 def blog(request):
     return render(request, 'cutaway/blog.html', {})
