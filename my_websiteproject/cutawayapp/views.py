@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from cutawayapp.models import Blog
+
 
 # Create your views here.
 
