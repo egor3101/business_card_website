@@ -16,6 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.views import LoginView, LogoutView
+from django.conf.urls.static import static
+from django.conf import settings
 
 from cutawayapp import views
 
@@ -26,4 +28,4 @@ urlpatterns = [
     path('mywebsite/blog', views.blog, name='blog'),
     path('mywebsite/sign-in/', LoginView.as_view(template_name='cutaway/sign_in.html'),
         name='mywebsite-sign-in')
-]
+] + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
