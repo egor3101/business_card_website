@@ -18,18 +18,7 @@ def algorithms(request):
 
 
 def blog(request):
-    blog_form = BlogForm
-
-    if request.method == 'POST':
-        blog_form = BlogForm(request.POST, request.FILES)
-        if blog_form.is_valid():
-            blog_form.save()
-            return HttpResponseRedirect('{}?sent=True'.format(reverse('blog')))
-
-    return render(request, 'cutaway/blog.html', {
-        'blog_form': blog_form,
-        'sent': request.GET.get('sent', False)
-    })
+    return render(request, 'cutaway/blog.html', {})
 
 
 def do_post(request):

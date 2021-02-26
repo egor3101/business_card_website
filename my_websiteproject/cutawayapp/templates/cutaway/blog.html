@@ -2,13 +2,5 @@
 {% block title %} Блог {% endblock %}
 
 {% block Page %}
-    {% if sent %}
-        <h2>Запись сохранена</h2>
-    {% endif %}
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ blog_form.as_p }}
-        <input type="submit" value="Отправить">
-    </form>
     <a class="do_post-link" href="{% url 'do_post' %}">Добавить пост</a>
  {% endblock %}
