@@ -28,5 +28,9 @@ def blog(request):
 
     return render(request, 'cutaway/blog.html', {
         'blog_form': blog_form,
-            'sent': request.GET.get('sent', False)
+        'sent': request.GET.get('sent', False)
     })
+
+
+def do_post(request):
+    return render(request, 'cutaway/do_post.html', {})

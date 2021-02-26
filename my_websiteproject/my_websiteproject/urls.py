@@ -27,5 +27,6 @@ urlpatterns = [
     path('mywebsite/algorithms', views.algorithms, name='algorithms'),
     path('mywebsite/blog', views.blog, name='blog'),
     path('mywebsite/sign-in/', LoginView.as_view(template_name='cutaway/sign_in.html'),
-        name='mywebsite-sign-in')
+        name='mywebsite-sign-in'),
+    path('mywebsite/do_post', views.do_post, name='do_post'),
 ] + static (settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
