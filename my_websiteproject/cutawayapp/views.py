@@ -33,4 +33,15 @@ def blog(request):
 
 
 def do_post(request):
-    return render(request, 'cutaway/do_post.html', {})
+    blog_form = BlogForm
+
+    if request.method == 'POST':
+        blog_form = BlogForm(request.POST, request.FILES)
+        if blog_form.is_valid():
+            blog_form.save()
+            return HttpResponseRedirect('{}?sent=True'.format(reverse('blog')))
+
+    return render(request, 'cutaway/do_post.html', {
+        'blog_form': blog_form,
+        'sent': request.GET.get('sent', False)
+    })

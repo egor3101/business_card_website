@@ -15,11 +15,9 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
     <title>{% block title %}{% endblock %}</title>
 </head>
-  <div class="container-fluid">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
       {% block Navbar %}{% endblock %}
-    </nav>
-  </div>
+
   <body>
     <main>
         {% block Page %}{% endblock %}
