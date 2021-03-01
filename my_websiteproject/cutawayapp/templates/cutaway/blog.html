@@ -6,7 +6,9 @@
     {% for post_objects in posts %}
         {{ post_objects.name }}
         {{ post_objects.text }}
-        {{ post_objects.image }}
+        {% if post_objects.image %}
+            <img src="{{post_objects.image.url}}" alt="{{post_objects.name}}">
+        {% endif %}
         {{ post_objects.date }}
 
     {% endfor %}
