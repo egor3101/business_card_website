@@ -18,7 +18,10 @@ def algorithms(request):
 
 
 def blog(request):
-    return render(request, 'cutaway/blog.html', {})
+    posts = Blog.objects.all().order_by('name')
+    return render(request, 'cutaway/blog.html', {
+        'posts': posts
+    })
 
 
 def do_post(request):

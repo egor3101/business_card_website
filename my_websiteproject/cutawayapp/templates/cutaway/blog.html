@@ -3,4 +3,11 @@
 
 {% block Page %}
     <a class="do_post-link" href="{% url 'do_post' %}">Добавить пост</a>
+    {% for post_objects in posts %}
+        {{ post_objects.name }}
+        {{ post_objects.text }}
+        {{ post_objects.image }}
+        {{ post_objects.date }}
+
+    {% endfor %}
  {% endblock %}
