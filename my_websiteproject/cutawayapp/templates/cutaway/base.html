@@ -36,11 +36,16 @@
         </li>
       </ul>
       <form class="d-flex">
+        <a class="btn btn-outline-success" href="{% url 'mywebsite-sign-out' %}">Выйти</a>
+      </form>
+      <form class="d-flex">
         <a class="btn btn-outline-success" href="{% url 'mywebsite-sign-in' %}">Войти</a>
+        <!-- дописать выход -->
       </form>
     </div>
     </nav>
 </div>
+
 
 {% endblock %}
 
