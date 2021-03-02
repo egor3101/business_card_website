@@ -34,7 +34,9 @@ def do_post(request):
     if request.method == 'POST':
         blog_form = BlogForm(request.POST, request.FILES)
         if blog_form.is_valid():
-            blog_form.save()
+            temp = blog_form.save(commit=False)
+            temp.owner = request.user
+            temp.save()  # Дописать сохрание Юзера в базе
             return HttpResponseRedirect('{}?sent=True'.format(reverse('blog')))
 
     return render(request, 'cutaway/do_post.html', {
@@ -53,7 +55,7 @@ def sign_up(request):
             new_user = User.objects.create_user(**user_form.cleaned_data)
             new_user.save()
 
-            login(request,authenticate(
+            login(request, authenticate(
                 username=user_form.cleaned_data['username'],
                 password=user_form.cleaned_data['password']
             ))
