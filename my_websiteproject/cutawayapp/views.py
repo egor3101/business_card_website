@@ -15,12 +15,12 @@ def home(request):
     return render(request, 'cutaway/home.html', {})
 
 
-@login_required(login_url='/cutaway/sign_in/')
+@login_required(login_url='/mywebsite/sign-in/')
 def algorithms(request):
     return render(request, 'cutaway/algorithms.html', {})
 
 
-@login_required(login_url='/cutaway/sign_in/')
+@login_required(login_url='/mywebsite/sign-in/')
 def blog(request):
     posts = Blog.objects.all().order_by('name')
     return render(request, 'cutaway/blog.html', {
