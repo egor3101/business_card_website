@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
+
 {% block title %}Новый пост{% endblock %}
 
 {% block Page %}
@@ -7,7 +9,7 @@
     {% endif %}
         <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        {{ blog_form.as_p }}
+        {% bootstrap_form blog_form %}
         <input type="submit"    value="Отправить">
         </form>
 {% endblock %}

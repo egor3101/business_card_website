@@ -36,7 +36,7 @@ def do_post(request):
         if blog_form.is_valid():
             temp = blog_form.save(commit=False)
             temp.owner = request.user
-            temp.save()  # Дописать сохрание Юзера в базе
+            temp.save()
             return HttpResponseRedirect('{}?sent=True'.format(reverse('blog')))
 
     return render(request, 'cutaway/do_post.html', {
