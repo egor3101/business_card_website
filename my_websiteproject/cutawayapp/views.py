@@ -22,7 +22,7 @@ def algorithms(request):
 
 @login_required(login_url='/mywebsite/sign-in/')
 def blog(request):
-    posts = Blog.objects.all().order_by('name')
+    posts = Blog.objects.all().order_by('-date')
     return render(request, 'cutaway/blog.html', {
         'posts': posts
     })
@@ -65,3 +65,5 @@ def sign_up(request):
     return render(request, 'cutaway/sign_up.html', {
         'user_form': user_form
     })
+
+# Дописать чтобы выход отоброжался только когда юзер в систем и тоже самое с кнопкой вход
