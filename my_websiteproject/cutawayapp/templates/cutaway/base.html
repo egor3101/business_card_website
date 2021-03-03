@@ -35,12 +35,15 @@
           </ul>
         </li>
       </ul>
+      {% if request.user.is_authenticated %}
       <form class="d-flex">
         <a class="btn btn-outline-success" href="{% url 'mywebsite-sign-out' %}">Выйти</a>
       </form>
+      {% else %}
       <form class="d-flex">
         <a class="btn btn-outline-success" href="{% url 'mywebsite-sign-in' %}">Войти</a>
       </form>
+      {% endif %}
     </div>
     </nav>
 </div>
