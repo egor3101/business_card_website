@@ -1,0 +1,12 @@
+.do_post-link {
+  color: rgb(247, 0, 0);
+  font-family: helvetica;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+.do_post-link:hover {
+  color: rgb(48, 133, 167);
+}
+
