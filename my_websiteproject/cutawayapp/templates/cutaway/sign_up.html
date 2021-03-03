@@ -1,12 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}Зарегистрироваться {% endblock %}
+{% load bootstrap4 %}
 
 {% block Page %}
-    <h2>Sign up</h2>
+    <h2 class="h2">Регистрация</h2>
     <form method="POST" enctype="multipart/form-data">
     {% csrf_token %}
-    {{ user_form.as_p }}
-        <button type="submit">Зарегистрироваться</button>
+    {% bootstrap_form user_form %}
+        <button class="btn btn-outline-primary" type="submit">Зарегистрироваться</button>
     </form>
 
     
