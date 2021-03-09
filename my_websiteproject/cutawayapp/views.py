@@ -28,6 +28,14 @@ def blog(request):
     })
 
 
+def games(request):
+    return render(request, 'cutaway/games.html', {})
+
+
+def chess(request):
+    return render(request, 'cutaway/chess.html', {})
+
+
 def do_post(request):
     blog_form = BlogForm
 
@@ -65,5 +73,3 @@ def sign_up(request):
     return render(request, 'cutaway/sign_up.html', {
         'user_form': user_form
     })
-
-
