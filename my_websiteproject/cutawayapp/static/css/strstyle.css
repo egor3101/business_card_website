@@ -3,9 +3,17 @@
   font-family: helvetica;
   text-decoration: none;
   text-transform: uppercase;
+  font-size: medium;
 }
 
 
 .do_post-link:hover {
   color: rgb(48, 133, 167);
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }

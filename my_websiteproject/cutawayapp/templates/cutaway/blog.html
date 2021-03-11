@@ -1,18 +1,35 @@
 {% extends 'cutaway/base.html' %}
 {% block title %} Блог {% endblock %}
+{% load static % }
+{% load bootstrap4 %}
 
 {% block Page %}
-    <a class="do_post-link" href="{% url 'do_post' %}">Добавить пост</a>
+<div class="row">
+    <div class="col-1">
+        <p class="text-left">
+            <a class="do_post-link" href="{% url 'do_post' %}">Добавить пост</a>
+        </p>
+    </div>
+    <div class="col-10">
+
     {% for post_objects in posts %}
 
-        {{ post_objects.name }}
-        {{ post_objects.text }}
-        
-        {% if post_objects.image %}
-            <img src="{{post_objects.image.url}}" alt="{{post_objects.name}}">
-        {% endif %}
+        <p class="text-center">
+            {{ post_objects.name }}
+            {{ post_objects.text }}
+        </p>
 
-        {{ post_objects.date }}
-        
+        {% if post_objects.image %}
+            <img src="{{post_objects.image.url}}" class="center" alt="{{post_objects.name}}">
+        {% endif %}
+        <p class="text-center">
+            {{ post_objects.date }}
+        </p>
     {% endfor %}
+    </div>
+    <div class="col-1">
+
+    </div>
+</div>
+
  {% endblock %}
