@@ -8,7 +8,7 @@ def client_get_posts(request):
     posts = BlogSerializers(
         Blog.objects.all().order_by("-id"),
         many=True,
-        context = {'request': request}
+        context={'request': request}
     ).data
 
     return JsonResponse({'post': posts})
