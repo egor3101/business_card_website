@@ -13,3 +13,4 @@ class Blog(models.Model):
 
     def __str__(self):
         return self.name
+# I have to make comments in posts
