@@ -9,6 +9,12 @@ class BlogForm(forms.ModelForm):
         fields = ('name', 'image', 'text', 'date')
 
 
+class CommentsForm(forms.ModelForm):
+    class Meta:
+        model = Blog
+        fields = ('comments',)
+
+
 class UserForm(forms.ModelForm):
     email = forms.CharField(max_length=100, required=True)
     password = forms.CharField(widget=forms.PasswordInput)

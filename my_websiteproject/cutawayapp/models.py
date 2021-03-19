@@ -10,7 +10,8 @@ class Blog(models.Model):
     text = models.TextField(default=None, verbose_name='Текст')
     image = models.ImageField(upload_to='image_blog/', blank=True, verbose_name='Фото')
     date = models.DateTimeField(verbose_name='Дата')
+    comments = models.CharField(max_length=150,verbose_name='Коментарии',blank=True)
 
     def __str__(self):
         return self.name
-# I have to make comments in posts
+

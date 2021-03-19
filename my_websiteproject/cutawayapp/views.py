@@ -6,7 +6,7 @@ from django.urls import reverse
 from django.contrib.auth.decorators import login_required
 
 from cutawayapp.models import Blog
-from cutawayapp.forms import BlogForm, UserForm
+from cutawayapp.forms import BlogForm, UserForm, CommentsForm
 
 
 # Create your views here.
@@ -22,9 +22,17 @@ def algorithms(request):
 
 @login_required(login_url='/mywebsite/sign-in/')
 def blog(request):
+    comments_form = CommentsForm
+    if request.method == 'POST':
+        comments_form = CommentsForm(request.POST)
+        if comments_form.is_valid():
+            data = comments_form.save(commit=False)
+            data.owner = request.user
+            data.save()
     posts = Blog.objects.all().order_by('-date')
     return render(request, 'cutaway/blog.html', {
-        'posts': posts
+        'posts': posts,
+        'comments_form': comments_form,
     })
 
 

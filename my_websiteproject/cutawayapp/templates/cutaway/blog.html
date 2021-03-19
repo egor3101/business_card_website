@@ -26,6 +26,13 @@
             {{ post_objects.date }}
         </p>
     {% endfor %}
+    
+    {% for comments in comments_form %}
+        <p class="text_center">
+            {{ comments.comments }}
+        </p>
+    {% endfor %}
+
     </div>
     <div class="col-1">
 
