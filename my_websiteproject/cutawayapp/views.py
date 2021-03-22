@@ -81,3 +81,4 @@ def sign_up(request):
     return render(request, 'cutaway/sign_up.html', {
         'user_form': user_form
     })
+# Сделать кликер в разделе "Игры" на JS,HTML,CSS
